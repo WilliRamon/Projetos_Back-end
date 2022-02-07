@@ -3,6 +3,7 @@ package org.generation.lojadegames.model;
 import java.util.List;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -30,6 +31,7 @@ public class Usuario {
 	private String nome;
 	
 	@Schema(example = "email@email.com.br")
+	@Column(unique = true)
 	@NotNull(message = "O atributo USUARIO não pode ser vázio")
 	@Size(min = 5, max = 100, message = "O atributo USUARIO exige no minimo 5 caracteres e no máximo 100")
 	private String usuario;
